@@ -1,0 +1,228 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+
+// Contact info
+const contactMethods = [
+  {
+    type: "email",
+    label: "Email",
+    value: "jhoselin.quispe@continental.edu.pe",
+    href: "mailto:jhoselin.quispe@continental.edu.pe",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />`,
+  },
+  {
+    type: "linkedin",
+    label: "LinkedIn",
+    value: "linkedin.com/in/jhoselin-quispe",
+    href: "https://linkedin.com/in/jhoselin-quispe",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />`,
+  },
+  {
+    type: "university",
+    label: "Universidad",
+    value: "Universidad Continental - Cusco",
+    href: "https://www.continental.edu.pe",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />`,
+  },
+];
+
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/jhoselin-quispe",
+    icon: `<path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>`,
+  },
+];
+---
+
+<PageLayout
+  title="Contacto"
+  description="Ponte en contacto con Jhoselin Quispe Luque para consultas académicas, oportunidades de prácticas o colaboraciones."
+>
+  <!-- Hero -->
+  <section class="container-custom section">
+    <div class="max-w-3xl mx-auto text-center">
+      <span
+        class="inline-block px-3 py-1 text-sm font-medium text-primary bg-primary/10 rounded-full mb-4"
+      >
+        Contacto
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+        ¡Conectemos!
+      </h1>
+      <p class="text-xl text-muted-foreground">
+        Estoy abierta a oportunidades de prácticas pre-profesionales, proyectos académicos colaborativos y nuevos retos en Ingeniería Industrial.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-custom pb-20">
+    <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- Contact Form -->
+      <div class="order-2 lg:order-1">
+        <h2 class="text-2xl font-bold text-foreground mb-6">
+          Envíame un mensaje
+        </h2>
+
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-6"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>
+              No llenes esto si eres humano: <input name="bot-field" />
+            </label>
+          </p>
+
+          <div>
+            <label for="name" class="block text-sm font-medium text-foreground mb-2">
+              Nombre
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+              placeholder="Tu nombre"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-foreground mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+              placeholder="tu@email.com"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-foreground mb-2">
+              Asunto
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+              placeholder="¿En qué puedo ayudarte?"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-foreground mb-2">
+              Mensaje
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows={5}
+              class="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
+              placeholder="Cuéntame sobre tu proyecto o idea..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="order-1 lg:order-2">
+        <h2 class="text-2xl font-bold text-foreground mb-6">
+          Información de contacto
+        </h2>
+
+        <div class="space-y-4 mb-12">
+          {
+            contactMethods.map((method) => (
+              <a
+                href={method.href}
+                target={method.type !== "email" ? "_blank" : undefined}
+                rel={method.type !== "email" ? "noopener noreferrer" : undefined}
+                class="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary transition-all duration-200 group"
+              >
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <svg
+                    class="w-6 h-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    set:html={method.icon}
+                  />
+                </div>
+                <div>
+                  <p class="text-sm text-muted-foreground">{method.label}</p>
+                  <p class="font-medium text-foreground group-hover:text-primary transition-colors">
+                    {method.value}
+                  </p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+
+        <!-- Social Links -->
+        <div>
+          <h3 class="text-lg font-semibold text-foreground mb-4">
+            Sígueme en redes
+          </h3>
+          <div class="flex gap-4">
+            {
+              socialLinks.map((social) => (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  class="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all duration-200 group"
+                >
+                  <svg
+                    class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    set:html={social.icon}
+                  />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="mt-12 p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
+          <div class="flex items-start gap-4">
+            <div class="w-3 h-3 rounded-full bg-success mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-foreground mb-1">
+                Disponible para prácticas
+              </h3>
+              <p class="text-sm text-muted-foreground">
+                Actualmente busco oportunidades de prácticas pre-profesionales 
+                en áreas de mejora de procesos, gestión de calidad o análisis de datos.
+                ¡No dudes en escribirme!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

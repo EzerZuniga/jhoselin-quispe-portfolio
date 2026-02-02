@@ -1,0 +1,72 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { EventDetail, fetchEventBySlug, fetchEvents } from "@modules/events";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const events = await fetchEvents();
+  return events.map((event) => ({
+    params: { slug: event.slug },
+    props: { event },
+  }));
+};
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect("/404");
+}
+
+const event = await fetchEventBySlug(String(slug));
+
+if (!event) {
+  return Astro.redirect("/404");
+}
+
+// Get other events
+const allEvents = await fetchEvents();
+const otherEvents = allEvents.filter((e) => e.slug !== event.slug).slice(0, 3);
+---
+
+<PageLayout
+  title={event.title}
+  description={event.summary}
+  image={event.image}
+>
+  <EventDetail event={event} />
+
+  <!-- Other Events -->
+  {
+    otherEvents.length > 0 && (
+      <section class="bg-card/50 border-y border-border">
+        <div class="container-custom section">
+          <h2 class="text-2xl font-bold text-foreground text-center mb-8">
+            Otros eventos
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            {otherEvents.map((other) => (
+              <a
+                href={`/events/${other.slug}`}
+                class="group p-6 rounded-2xl bg-background border border-border hover:border-primary transition-all duration-200"
+              >
+                <p class="text-sm text-muted-foreground mb-2">
+                  {new Date(other.date).toLocaleDateString("es", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+                <h3 class="font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                  {other.title}
+                </h3>
+                <p class="text-sm text-muted-foreground line-clamp-2">
+                  {other.summary}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</PageLayout>

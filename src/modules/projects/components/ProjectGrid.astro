@@ -1,0 +1,95 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import type { Project } from "@app-types/project";
+
+interface Props {
+  projects?: Project[];
+  showTitle?: boolean;
+  showLink?: boolean;
+  limit?: number;
+}
+
+const { projects = [], showTitle = true, showLink = true, limit }: Props = Astro.props;
+
+const displayProjects = limit ? projects.slice(0, limit) : projects;
+const hasMore = limit ? projects.length > limit : false;
+---
+
+<section class="container-custom section">
+  {
+    showTitle && (
+      <div class="text-center mb-12">
+        <span class="inline-block px-3 py-1 text-sm font-medium text-primary bg-primary/10 rounded-full mb-4">
+          Portfolio
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          Proyectos Destacados
+        </h2>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+          Una selección de mis trabajos más recientes. Cada proyecto representa un
+          desafío único y una oportunidad de aprendizaje.
+        </p>
+      </div>
+    )
+  }
+
+  {
+    displayProjects.length === 0 ? (
+      <div class="text-center py-16">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-secondary flex items-center justify-center">
+          <svg
+            class="w-10 h-10 text-muted"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-foreground mb-2">
+          No hay proyectos disponibles
+        </h3>
+        <p class="text-muted-foreground">
+          Los proyectos aparecerán aquí cuando estén publicados.
+        </p>
+      </div>
+    ) : (
+      <>
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+          {displayProjects.map((project, index) => (
+            <ProjectCard project={project} featured={index === 0 && displayProjects.length > 2} />
+          ))}
+        </div>
+
+        {hasMore && showLink && (
+          <div class="text-center mt-12">
+            <a
+              href="/projects"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-xl font-medium hover:bg-secondary/80 transition-all duration-200"
+            >
+              Ver todos los proyectos
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+        )}
+      </>
+    )
+  }
+</section>

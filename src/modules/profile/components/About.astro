@@ -1,0 +1,83 @@
+---
+import type { ProfileAbout } from "@app-types/profile";
+
+interface Props {
+  content: ProfileAbout;
+}
+
+const { content }: Props = Astro.props;
+---
+
+<section id="about" class="py-16 md:py-20 lg:py-24 bg-white dark:bg-background">
+  <div class="container-custom">
+    <div class="max-w-6xl mx-auto">
+      <!-- Content Grid - naisser.com style (two columns) -->
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+        <!-- Image side -->
+        <div class="relative order-2 lg:order-1 flex justify-center lg:justify-start">
+          <img
+            src="/images/profile/foto 2.jpeg"
+            alt="Jhoselin Quispe Luque"
+            class="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-xl shadow-xl object-cover aspect-[4/5]"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Text content - naisser.com style -->
+        <div class="space-y-4 sm:space-y-5 order-1 lg:order-2">
+          <!-- Name in primary color - naisser.com style -->
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary uppercase tracking-wide">
+            JHOSELIN QUISPE LUQUE
+          </h2>
+          
+          <!-- Subtitle -->
+          <p class="text-sm sm:text-base text-foreground font-semibold border-l-4 border-primary pl-3">
+            Estudiante de Ingeniería Industrial · 5to Semestre
+          </p>
+
+          <!-- Description paragraphs - italic style like naisser.com -->
+          <div class="space-y-3 sm:space-y-4">
+            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base italic">
+              Estudio Ingeniería Industrial en la Universidad Continental - Cusco, actualmente en el 5to semestre. 
+              Me especializo en análisis y optimización de procesos, con un enfoque en la mejora continua.
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">
+              He participado en diversos proyectos académicos relacionados con metodologías de calidad, 
+              gestión de operaciones y análisis de datos. Mi objetivo es aplicar herramientas de ingeniería 
+              para resolver problemas reales en organizaciones.
+            </p>
+            
+            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">
+              Me apasiona la Industria 4.0, la Inteligencia Artificial aplicada a procesos industriales 
+              y el análisis de datos para la toma de decisiones. Y en este portafolio quiero compartir 
+              mis proyectos y experiencias con ustedes.
+            </p>
+          </div>
+
+          <!-- CTA Buttons - naisser.com style (blue pill buttons) -->
+          <div class="flex flex-wrap gap-3 pt-3">
+            <a 
+              href="/about" 
+              class="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              Ver CV
+            </a>
+            <a 
+              href="/projects" 
+              class="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              Ver Proyectos
+            </a>
+            <a 
+              href="/events" 
+              class="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-primary text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              Ver Eventos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

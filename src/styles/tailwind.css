@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Custom Base Styles - Inspired by naisser.com
+   ============================================ */
+@layer base {
+  :root {
+    /* Light mode - naisser.com color palette */
+    --color-background: 255 255 255;
+    --color-foreground: 51 51 51;
+    --color-muted: 128 128 128;
+    --color-muted-foreground: 102 102 102;
+    --color-border: 230 235 245;
+    --color-card: 255 255 255;
+    --color-card-foreground: 51 51 51;
+    --color-primary: 33 150 243;
+    --color-primary-foreground: 255 255 255;
+    --color-secondary: 245 248 252;
+    --color-secondary-foreground: 51 51 51;
+    --color-accent: 33 150 243;
+    --color-accent-foreground: 255 255 255;
+    --color-success: 76 175 80;
+    --color-warning: 255 152 0;
+    --color-error: 244 67 54;
+  }
+
+  .dark {
+    --color-background: 30 41 59;
+    --color-foreground: 248 250 252;
+    --color-muted: 148 163 184;
+    --color-muted-foreground: 203 213 225;
+    --color-border: 51 65 85;
+    --color-card: 51 65 85;
+    --color-card-foreground: 248 250 252;
+    --color-primary: 66 165 245;
+    --color-primary-foreground: 255 255 255;
+    --color-secondary: 71 85 105;
+    --color-secondary-foreground: 241 245 249;
+    --color-accent: 66 165 245;
+    --color-accent-foreground: 255 255 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+}
+
+/* ============================================
+   Custom Components - naisser.com Style
+   ============================================ */
+@layer components {
+  /* Container utility */
+  .container-custom {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Section title style like naisser.com */
+  .section-title {
+    @apply text-xl sm:text-2xl md:text-3xl font-bold text-foreground;
+  }
+
+  /* Prose for content */
+  .prose-custom {
+    @apply prose prose-neutral dark:prose-invert max-w-none
+      prose-headings:font-semibold prose-headings:tracking-tight
+      prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+      prose-img:rounded-xl;
+  }
+
+  /* naisser.com style service card */
+  .service-card {
+    @apply bg-white dark:bg-card rounded-xl border border-border/50 p-5 sm:p-6 text-center transition-all duration-300;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+  }
+
+  .service-card:hover {
+    @apply border-primary/30;
+    box-shadow: 0 8px 30px rgba(33, 150, 243, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .service-card-icon {
+    @apply w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-4 text-primary;
+  }
+
+  .service-card-title {
+    @apply text-base font-semibold text-foreground mb-2;
+  }
+
+  .service-card-description {
+    @apply text-muted-foreground text-xs sm:text-sm leading-relaxed;
+  }
+
+  /* Hero circular image style like naisser.com */
+  .hero-image-circle {
+    @apply w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full mx-auto;
+    @apply border-4 border-white/90 shadow-2xl overflow-hidden;
+    @apply bg-white;
+  }
+
+  /* Professional card style */
+  .card-professional {
+    @apply bg-card rounded-2xl border border-border p-6 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Timeline item style */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-primary/30 last:pb-0;
+  }
+
+  .timeline-item::before {
+    @apply absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background content-[''];
+  }
+
+  /* Stats counter style */
+  .stat-counter {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-primary;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground uppercase tracking-wider mt-1;
+  }
+
+  /* Button styles - naisser.com style */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-all duration-200;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3 bg-secondary text-secondary-foreground rounded-full font-medium hover:bg-secondary/80 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 border-2 border-primary text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-200;
+  }
+
+  /* Skill bar */
+  .skill-bar {
+    @apply h-2.5 bg-secondary rounded-full overflow-hidden;
+  }
+
+  .skill-bar-fill {
+    @apply h-full bg-primary rounded-full transition-all duration-1000;
+  }
+
+  /* Skip link */
+  .skip-link {
+    @apply fixed top-4 left-4 z-[9999] -translate-y-20 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium shadow-lg transition-transform duration-200 focus:translate-y-0;
+  }
+
+  /* Badge styles */
+  .badge-primary {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary;
+  }
+}
+
+/* ============================================
+   Custom Utilities
+   ============================================ */
+@layer utilities {
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Tech pattern background for hero - like naisser.com */
+  .tech-pattern-bg {
+    background-color: rgb(55, 71, 90);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20h10v10H20zM50 20h10v10H50zM80 20h10v10H80zM20 50h10v10H20zM50 50h10v10H50zM80 50h10v10H80zM20 80h10v10H20zM50 80h10v10H50zM80 80h10v10H80z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .tech-pattern-bg {
+    background-color: rgb(30, 41, 59);
+  }
+
+  /* Animated lines for hero background */
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-lines::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+      linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,0.03) 49.5%, rgba(255,255,255,0.03) 50.5%, transparent 50.5%),
+      linear-gradient(0deg, transparent 49.5%, rgba(255,255,255,0.03) 49.5%, rgba(255,255,255,0.03) 50.5%, transparent 50.5%);
+    background-size: 80px 80px;
+  }
+}

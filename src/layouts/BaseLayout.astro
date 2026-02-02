@@ -1,0 +1,100 @@
+---
+import "@styles/tailwind.css";
+import "@styles/app.css";
+import { seoConfig } from "@seo/seo.config";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  publishedAt?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title = seoConfig.defaultTitle,
+  description = seoConfig.defaultDescription,
+  image = seoConfig.defaultImage,
+  type = "website",
+  publishedAt,
+  noIndex = false,
+}: Props = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || seoConfig.siteUrl);
+const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoConfig.siteName}`;
+---
+
+<!doctype html>
+<html lang="es" class="light">
+  <head>
+    <!-- Essential Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Robots -->
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content={seoConfig.siteName} />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={fullTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Article specific -->
+    {publishedAt && <meta property="article:published_time" content={publishedAt} />}
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme initialization (prevent flash) -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme-preference");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = stored === "dark" || (stored === "system" && prefersDark) || (!stored && prefersDark) ? "dark" : "light";
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+
+    <!-- Additional head content -->
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-background text-foreground font-sans antialiased">
+    <!-- Skip to main content link -->
+    <slot name="skip" />
+
+    <!-- Main content -->
+    <slot />
+
+    <!-- Scripts -->
+    <slot name="scripts" />
+  </body>
+</html>

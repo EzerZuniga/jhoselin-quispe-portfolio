@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <!-- Conference stage visualization -->
+  <rect x="100" y="60" width="600" height="280" rx="12" fill="#1e1e2e" fill-opacity="0.3"/>
+  <!-- Screen -->
+  <rect x="200" y="80" width="400" height="180" rx="8" fill="#ffffff" fill-opacity="0.1"/>
+  <rect x="220" y="100" width="200" height="20" rx="4" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="220" y="130" width="360" height="12" rx="3" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="220" y="150" width="340" height="12" rx="3" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="220" y="170" width="320" height="12" rx="3" fill="#ffffff" fill-opacity="0.2"/>
+  <rect x="220" y="200" width="150" height="40" rx="6" fill="#ffffff" fill-opacity="0.25"/>
+  <!-- Audience silhouettes -->
+  <circle cx="200" cy="380" r="20" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="280" cy="370" r="18" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="360" cy="385" r="22" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="440" cy="375" r="19" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="520" cy="380" r="21" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="600" cy="370" r="18" fill="#ffffff" fill-opacity="0.2"/>
+  <!-- Star rating -->
+  <text x="350" y="320" fill="#ffffff" font-size="24" fill-opacity="0.8">★ ★ ★ ★ ★</text>
+  <text x="400" y="420" text-anchor="middle" fill="#ffffff" font-family="system-ui" font-size="16" font-weight="600">Mi Experiencia en Frontend Day</text>
+</svg>

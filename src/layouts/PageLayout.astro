@@ -1,0 +1,56 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Navbar from "@components/layout/Navbar.astro";
+import Footer from "@components/layout/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  publishedAt?: string;
+  showFooter?: boolean;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  type,
+  publishedAt,
+  showFooter = true,
+  noIndex = false,
+}: Props = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={image}
+  type={type}
+  publishedAt={publishedAt}
+  noIndex={noIndex}
+>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link" slot="skip">
+    Ir al contenido principal
+  </a>
+
+  <!-- Navigation -->
+  <Navbar />
+
+  <!-- Main content area -->
+  <main id="main" class="flex-1">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  {showFooter && <Footer />}
+
+  <!-- Slot for additional head content -->
+  <slot name="head" slot="head" />
+
+  <!-- Slot for additional scripts -->
+  <slot name="scripts" slot="scripts" />
+</BaseLayout>
