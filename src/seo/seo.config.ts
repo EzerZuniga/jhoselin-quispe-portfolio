@@ -29,7 +29,7 @@ export const seoConfig: SeoConfig = {
   defaultTitle: "Jhoselin Quispe · Frontend Developer & UI Designer",
   defaultDescription:
     "Portafolio profesional de Jhoselin Quispe. Desarrolladora frontend especializada en crear experiencias digitales accesibles, intuitivas y visualmente atractivas con React, TypeScript y Tailwind CSS.",
-  siteUrl: "https://jhoselinquispe.dev",
+  siteUrl: "https://jhoselin-quispe-luque.netlify.app",
   defaultImage: "/images/og-image.jpg",
   twitterHandle: "jhoselinquispe",
   author: "Jhoselin Quispe",
@@ -142,9 +142,9 @@ export function generateArticleSchema(options: {
     headline: options.title,
     description: options.description,
     url: options.url,
-    image: options.image || seoConfig.defaultImage,
+    image: options.image ?? seoConfig.defaultImage,
     datePublished: options.publishedAt,
-    dateModified: options.modifiedAt || options.publishedAt,
+    dateModified: options.modifiedAt ?? options.publishedAt,
     author: {
       "@type": "Person",
       name: seoConfig.author,

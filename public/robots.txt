@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jhoselin-quispe-luque.netlify.app/sitemap.xml
+Host: jhoselin-quispe-luque.netlify.app
