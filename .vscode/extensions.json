@@ -1,0 +1,43 @@
+{
+  "recommendations": [
+    // Astro
+    "astro-build.astro-vscode",
+    
+    // Esenciales
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    
+    // TypeScript
+    "usernamehw.errorlens",
+    
+    // Tailwind CSS
+    "bradlc.vscode-tailwindcss",
+    
+    // Git
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    
+    // Utilidades
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-spanish",
+    
+    // Productividad
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "zignd.html-css-class-completion",
+    
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    
+    // Icons
+    "pkief.material-icon-theme",
+    
+    // Themes (opcional)
+    "github.github-vscode-theme",
+    
+    // Testing
+    "vitest.explorer"
+  ]
+}

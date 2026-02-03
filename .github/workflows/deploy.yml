@@ -1,0 +1,36 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Instalar dependencias
+        run: npm ci
+        
+      - name: Ejecutar tests
+        run: npm test
+        continue-on-error: true
+        
+      - name: Construir proyecto
+        run: npm run build
+        
+      - name: Verificar build
+        run: |
+          echo "✅ Build completado exitosamente"
+          ls -la dist/

@@ -25,19 +25,32 @@ export interface SeoConfig {
 }
 
 export const seoConfig: SeoConfig = {
-  siteName: "Jhoselin",
-  defaultTitle: "Jhoselin · estudiante de Ingenieria Industrial",
+  siteName: "Jhoselin Quispe",
+  defaultTitle: "Jhoselin Quispe Luque · Ingeniería Industrial | Portfolio Académico",
   defaultDescription:
-    "Portafolio profesional de Jhoselin. Desarrolladora frontend especializada en crear experiencias digitales accesibles, intuitivas y visualmente atractivas con React, TypeScript y Tailwind CSS.",
+    "Portfolio académico de Jhoselin Quispe Luque. Estudiante de Ingeniería Industrial en la Universidad Continental - Cusco (5to semestre). Especializada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0.",
   siteUrl: "https://jhoselin-quispe-luque.netlify.app",
   defaultImage: "/images/og-image.jpg",
   twitterHandle: "jhoselinquispe",
-  author: "Jhoselin",
+  author: "Jhoselin Quispe Luque",
   language: "es",
   keywords: [
-    "Jhoselin",
-    "Jhoselin Quispe",
     "Jhoselin Quispe Luque",
+    "Jhoselin Quispe",
+    "Ingeniería Industrial",
+    "Universidad Continental Cusco",
+    "mejora de procesos",
+    "análisis de datos",
+    "gestión de calidad",
+    "mejora continua",
+    "Lean Manufacturing",
+    "Six Sigma",
+    "Industria 4.0",
+    "inteligencia artificial industrial",
+    "automatización de procesos",
+    "portfolio académico",
+    "estudiante ingeniería",
+    "Cusco Perú",
   ],
 };
 
@@ -98,9 +111,25 @@ export function generatePersonSchema() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: seoConfig.author,
-    alternateName: ["Jhoselin Quispe", "Jhoselin Quispe Luque"],
     url: seoConfig.siteUrl,
-    jobTitle: "Frontend Developer & UI Designer",
+    jobTitle: "Estudiante de Ingeniería Industrial",
+    description: "Estudiante de 5to semestre en la Universidad Continental - Cusco, especializada en mejora de procesos y análisis de datos",
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "Universidad Continental",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Cusco",
+        addressCountry: "PE",
+      },
+    },
+    knowsAbout: [
+      "Mejora de procesos",
+      "Análisis de datos",
+      "Gestión de calidad",
+      "Industria 4.0",
+      "Inteligencia Artificial",
+    ],
     sameAs: [
       `https://twitter.com/${seoConfig.twitterHandle}`,
       "https://github.com/jhoselinquispe",

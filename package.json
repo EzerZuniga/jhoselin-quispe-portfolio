@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "generate:favicons": "node generate-favicons-png.js"
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
@@ -38,6 +39,7 @@
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.0",
+    "sharp": "^0.33.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.0",
     "typescript-eslint": "^7.0.0",
