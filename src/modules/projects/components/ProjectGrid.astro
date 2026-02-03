@@ -18,14 +18,14 @@ const hasMore = limit ? projects.length > limit : false;
 <section class="container-custom section">
   {
     showTitle && (
-      <div class="text-center mb-12">
-        <span class="inline-block px-3 py-1 text-sm font-medium text-primary bg-primary/10 rounded-full mb-4">
+      <div class="text-center mb-8 sm:mb-10">
+        <span class="inline-block px-3 py-1 text-sm font-medium text-primary bg-primary/10 rounded-full mb-3">
           Portfolio
         </span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3">
           Proyectos Destacados
         </h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto">
+        <p class="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
           Una selección de mis trabajos más recientes. Cada proyecto representa un
           desafío único y una oportunidad de aprendizaje.
         </p>
@@ -60,21 +60,21 @@ const hasMore = limit ? projects.length > limit : false;
       </div>
     ) : (
       <>
-        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {displayProjects.map((project, index) => (
-            <ProjectCard project={project} featured={index === 0 && displayProjects.length > 2} />
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 auto-rows-fr">
+          {displayProjects.map((project) => (
+            <ProjectCard project={project} featured={false} />
           ))}
         </div>
 
         {hasMore && showLink && (
-          <div class="text-center mt-12">
+          <div class="text-center mt-8 sm:mt-10">
             <a
               href="/projects"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-xl font-medium hover:bg-secondary/80 transition-all duration-200"
+              class="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-all duration-200 text-sm sm:text-base"
             >
               Ver todos los proyectos
               <svg
-                class="w-5 h-5"
+                class="w-4 h-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

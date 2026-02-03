@@ -2,7 +2,7 @@
 title: "Dashboard de Indicadores de Gestión"
 summary: "Desarrollo de un tablero de control con indicadores clave de rendimiento (KPIs) para seguimiento de producción."
 description: "Proyecto que integra la recolección, análisis y visualización de datos de producción mediante herramientas digitales para facilitar la toma de decisiones gerenciales."
-image: "/images/projects/dashboard-kpi.svg"
+image: "/images/projects/gestion.jpg"
 technologies:
   - Excel
   - Power BI

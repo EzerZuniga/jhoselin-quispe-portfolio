@@ -59,6 +59,11 @@ const config: Config = {
 			boxShadow: {
 				glow: "0 0 20px rgba(26, 115, 232, 0.3)",
 				"glow-lg": "0 0 40px rgba(26, 115, 232, 0.4)",
+				"soft": "0 2px 8px 0 rgba(0, 0, 0, 0.08)",
+				"soft-lg": "0 4px 16px 0 rgba(0, 0, 0, 0.12)",
+				"soft-xl": "0 8px 24px 0 rgba(0, 0, 0, 0.16)",
+				"3xl": "0 20px 40px -12px rgba(0, 0, 0, 0.25)",
+				"inner-lg": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
 			},
 			animation: {
 				"fade-in": "fadeIn 0.5s ease-out forwards",

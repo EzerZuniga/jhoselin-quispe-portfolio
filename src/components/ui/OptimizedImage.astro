@@ -1,0 +1,82 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  aspectRatio?: "video" | "square" | "portrait" | "none";
+  loading?: "lazy" | "eager";
+  showGradient?: boolean;
+  gradientClass?: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  class: className = "",
+  aspectRatio = "video",
+  loading = "lazy",
+  showGradient = false,
+  gradientClass = "from-primary/20 to-secondary/20",
+  width = 800,
+  height = 450,
+}: Props = Astro.props;
+
+const aspectClasses = {
+  video: "aspect-video",
+  square: "aspect-square",
+  portrait: "aspect-[3/4]",
+  none: "h-full w-full",
+};
+---
+
+<div class={`relative overflow-hidden ${aspectRatio !== 'none' ? aspectClasses[aspectRatio] : ''} ${className}`}>
+  <!-- Loading skeleton -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-muted/50 to-muted animate-pulse"
+    data-skeleton
+  ></div>
+
+  <!-- Gradient overlay (optional) -->
+  {
+    showGradient && (
+      <div class={`absolute inset-0 bg-gradient-to-br ${gradientClass} opacity-10 z-10`} />
+    )
+  }
+
+  <!-- Optimized image -->
+  <img
+    src={src}
+    alt={alt}
+    class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-500 opacity-0 data-[loaded='true']:opacity-100"
+    loading={loading}
+    decoding="async"
+    width={width}
+    height={height}
+    onload="this.dataset.loaded = 'true'; this.previousElementSibling?.previousElementSibling?.remove()"
+    onerror="this.style.opacity='0.3'; this.dataset.loaded = 'true'; this.previousElementSibling?.previousElementSibling?.remove()"
+  />
+</div>
+
+<style>
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  [data-skeleton] {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted) / 0.5) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 1000px 100%;
+  }
+</style>

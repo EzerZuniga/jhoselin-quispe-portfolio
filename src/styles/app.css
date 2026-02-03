@@ -47,6 +47,24 @@ img {
   display: block;
 }
 
+/* Image optimization and loading */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+img:not([src]) {
+  visibility: hidden;
+}
+
+/* Aspect ratio containers */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 /* Lists */
 ul,
 ol {

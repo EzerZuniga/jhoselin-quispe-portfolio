@@ -2,7 +2,7 @@
 title: "Análisis y Mejora de Procesos Productivos"
 summary: "Estudio de tiempos y movimientos para optimizar la línea de producción en una empresa manufacturera local."
 description: "Proyecto académico enfocado en la identificación de cuellos de botella, análisis de tiempos y propuestas de mejora en procesos productivos utilizando herramientas de Ingeniería Industrial."
-image: "/images/projects/analisis-procesos.svg"
+image: "/images/projects/analisis.jpg"
 technologies:
   - Estudio de tiempos
   - Diagrama de flujo

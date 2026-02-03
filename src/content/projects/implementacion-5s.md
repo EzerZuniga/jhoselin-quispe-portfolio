@@ -2,7 +2,7 @@
 title: "Propuesta de Implementación 5S"
 summary: "Diseño de un programa de mejora continua basado en la metodología 5S para un área de trabajo específica."
 description: "Proyecto académico que desarrolla una propuesta integral para implementar la metodología japonesa 5S, orientada a mejorar el orden, limpieza y eficiencia en espacios de trabajo."
-image: "/images/projects/metodologia-5s.svg"
+image: "/images/projects/propuesta.png"
 technologies:
   - Metodología 5S
   - Mejora continua
