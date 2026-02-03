@@ -25,25 +25,19 @@ export interface SeoConfig {
 }
 
 export const seoConfig: SeoConfig = {
-  siteName: "Jhoselin Quispe",
-  defaultTitle: "Jhoselin Quispe · Frontend Developer & UI Designer",
+  siteName: "Jhoselin",
+  defaultTitle: "Jhoselin · estudiante de Ingenieria Industrial",
   defaultDescription:
-    "Portafolio profesional de Jhoselin Quispe. Desarrolladora frontend especializada en crear experiencias digitales accesibles, intuitivas y visualmente atractivas con React, TypeScript y Tailwind CSS.",
+    "Portafolio profesional de Jhoselin. Desarrolladora frontend especializada en crear experiencias digitales accesibles, intuitivas y visualmente atractivas con React, TypeScript y Tailwind CSS.",
   siteUrl: "https://jhoselin-quispe-luque.netlify.app",
   defaultImage: "/images/og-image.jpg",
   twitterHandle: "jhoselinquispe",
-  author: "Jhoselin Quispe",
+  author: "Jhoselin",
   language: "es",
   keywords: [
-    "desarrolladora frontend",
-    "UI designer",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Astro",
-    "desarrollo web",
-    "portfolio",
-    "Bolivia",
+    "Jhoselin",
+    "Jhoselin Quispe",
+    "Jhoselin Quispe Luque",
   ],
 };
 
@@ -104,6 +98,7 @@ export function generatePersonSchema() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: seoConfig.author,
+    alternateName: ["Jhoselin Quispe", "Jhoselin Quispe Luque"],
     url: seoConfig.siteUrl,
     jobTitle: "Frontend Developer & UI Designer",
     sameAs: [
