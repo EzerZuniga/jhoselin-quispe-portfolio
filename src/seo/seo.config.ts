@@ -84,15 +84,10 @@ export function generatePageSeo(
     type = "website",
   } = options;
 
-  const fullTitle =
-    title === seoConfig.defaultTitle
-      ? title
-      : `${title} | ${seoConfig.siteName}`;
+  const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoConfig.siteName}`;
 
   const canonical = `${seoConfig.siteUrl}${path}`;
-  const fullImage = image.startsWith("http")
-    ? image
-    : `${seoConfig.siteUrl}${image}`;
+  const fullImage = image.startsWith("http") ? image : `${seoConfig.siteUrl}${image}`;
 
   return {
     title: fullTitle,
@@ -113,7 +108,8 @@ export function generatePersonSchema() {
     name: seoConfig.author,
     url: seoConfig.siteUrl,
     jobTitle: "Estudiante de Ingeniería Industrial",
-    description: "Estudiante de 5to semestre en la Universidad Continental - Cusco, especializada en mejora de procesos y análisis de datos",
+    description:
+      "Estudiante de 5to semestre en la Universidad Continental - Cusco, especializada en mejora de procesos y análisis de datos",
     alumniOf: {
       "@type": "EducationalOrganization",
       name: "Universidad Continental",
