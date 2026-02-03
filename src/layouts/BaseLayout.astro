@@ -38,6 +38,10 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
     <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <meta
+      name="google-site-verification"
+      content="n5T9bgviyHU5mpti7fzXziBLe-kuJCsNzKmwM5xGcxg"
+    />
 
     <!-- Robots -->
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
