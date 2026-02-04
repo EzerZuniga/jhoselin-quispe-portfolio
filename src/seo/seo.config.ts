@@ -25,7 +25,7 @@ export interface SeoConfig {
 }
 
 export const seoConfig: SeoConfig = {
-  siteName: "Jhoselin Quispe",
+  siteName: "Jhoselin Quispe Luque",
   defaultTitle: "Jhoselin Quispe Luque · Ingeniería Industrial | Portfolio Académico",
   defaultDescription:
     "Portfolio académico de Jhoselin Quispe Luque. Estudiante de Ingeniería Industrial en la Universidad Continental - Cusco (5to semestre). Especializada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0.",
