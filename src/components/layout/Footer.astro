@@ -1,4 +1,6 @@
 ---
+import { seoConfig } from "@seo/seo.config";
+
 interface SocialLink {
   label: string;
   href: string;
@@ -62,9 +64,9 @@ const currentYear = new Date().getFullYear();
             JQ
           </span>
           <div>
-            <span class="block text-base font-semibold text-slate-900 dark:text-white"
-              >Jhoselin Quispe Luque</span
-            >
+            <span class="block text-base font-semibold text-slate-900 dark:text-white">
+              {seoConfig.siteName}
+            </span>
             <span class="text-xs text-slate-500 dark:text-slate-400"
               >Estudiante de Ingeniería Industrial</span
             >
@@ -212,7 +214,8 @@ const currentYear = new Date().getFullYear();
     <div class="container-custom py-4">
       <div class="flex flex-col items-center justify-between gap-2 sm:flex-row">
         <p class="text-xs text-slate-500">
-          © {currentYear} Jhoselin Quispe Luque. Todos los derechos reservados.
+          © {currentYear}
+          {seoConfig.siteName}. Todos los derechos reservados.
         </p>
         <p class="flex items-center gap-1 text-xs text-slate-500">
           Desarrollado por

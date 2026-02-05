@@ -1,7 +1,7 @@
 ---
 import "@styles/tailwind.css";
 import "@styles/app.css";
-import { seoConfig } from "@seo/seo.config";
+import { generatePageSeo, generatePersonSchema, generateWebsiteSchema, seoConfig } from "@seo/seo.config";
 
 interface Props {
   title?: string;
@@ -21,8 +21,9 @@ const {
   noIndex = false,
 }: Props = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site || seoConfig.siteUrl);
-const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoConfig.siteName}`;
+const seo = generatePageSeo(Astro.url.pathname, { title, description, image, type });
+const twitterSite = seoConfig.twitterHandle ? `@${seoConfig.twitterHandle}` : undefined;
+const structuredData = [generateWebsiteSchema(), generatePersonSchema()];
 ---
 
 <!doctype html>
@@ -34,10 +35,17 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
-    <title>{fullTitle}</title>
-    <meta name="title" content={fullTitle} />
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    <title>{seo.title}</title>
+    <meta name="title" content={seo.title} />
+    <meta name="description" content={seo.description} />
+    <meta name="application-name" content={seoConfig.siteName} />
+    <meta name="apple-mobile-web-app-title" content={seoConfig.siteName} />
+    <meta name="author" content={seoConfig.author} />
+    <meta name="creator" content={seoConfig.author} />
+    <meta name="publisher" content={seoConfig.author} />
+    <meta name="keywords" content={seoConfig.keywords.join(", ")} />
+    <meta name="language" content={seoConfig.language} />
+    <link rel="canonical" href={seo.canonical} />
     <meta name="google-site-verification" content="n5T9bgviyHU5mpti7fzXziBLe-kuJCsNzKmwM5xGcxg" />
 
     <!-- Robots -->
@@ -53,19 +61,20 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:site_name" content="Jhoselin Quispe Luque" />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:image" content={seo.image} />
+    <meta property="og:site_name" content={seoConfig.siteName} />
     <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalUrl} />
-    <meta property="twitter:title" content={fullTitle} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <meta property="twitter:url" content={seo.canonical} />
+    <meta property="twitter:title" content={seo.title} />
+    <meta property="twitter:description" content={seo.description} />
+    <meta property="twitter:image" content={seo.image} />
+    {twitterSite && <meta name="twitter:site" content={twitterSite} />}
 
     <!-- Article specific -->
     {publishedAt && <meta property="article:published_time" content={publishedAt} />}
@@ -80,32 +89,7 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jhoselin Quispe Luque",
-        "url": "https://jhoselin-quispe-luque.netlify.app",
-        "image": "https://jhoselin-quispe-luque.netlify.app/images/profile/fondo.avif",
-        "jobTitle": "Estudiante de Ingeniería Industrial",
-        "worksFor": {
-          "@type": "EducationalOrganization",
-          "name": "Universidad Continental Cusco"
-        },
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Universidad Continental Cusco"
-        },
-        "knowsAbout": [
-          "Ingeniería Industrial",
-          "Mejora de Procesos",
-          "Análisis de Datos",
-          "Gestión de Calidad",
-          "Lean Manufacturing",
-          "Six Sigma",
-          "Industria 4.0"
-        ],
-        "description": "Estudiante de Ingeniería Industrial en la Universidad Continental - Cusco. Especializada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0."
-      }
+      {JSON.stringify(structuredData)}
     </script>
 
     <!-- Theme initialization (prevent flash) -->

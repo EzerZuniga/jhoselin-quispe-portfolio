@@ -30,7 +30,7 @@ export const seoConfig: SeoConfig = {
   defaultDescription:
     "Portafolio académico de Jhoselin Quispe Luque, estudiante de Ingeniería Industrial en la Universidad Continental - Cusco, enfocada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0.",
   siteUrl: "https://jhoselin-quispe-luque.netlify.app",
-  defaultImage: "/images/og-image.jpg",
+  defaultImage: "/images/profile/fondo.avif",
   twitterHandle: "jhoselinquispe",
   author: "Jhoselin Quispe Luque",
   language: "es",
@@ -102,11 +102,22 @@ export function generatePageSeo(
  * JSON-LD structured data generators.
  */
 export function generatePersonSchema() {
+  const sameAs = [
+    seoConfig.twitterHandle ? `https://twitter.com/${seoConfig.twitterHandle}` : null,
+    "https://github.com/jhoselinquispe",
+    "https://linkedin.com/in/jhoselinquispe",
+  ].filter(Boolean);
+
+  const image = seoConfig.defaultImage.startsWith("http")
+    ? seoConfig.defaultImage
+    : `${seoConfig.siteUrl}${seoConfig.defaultImage}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     name: seoConfig.author,
     url: seoConfig.siteUrl,
+    image,
     jobTitle: "Estudiante de Ingeniería Industrial",
     description:
       "Estudiante de 5to semestre en la Universidad Continental - Cusco, especializada en mejora de procesos y análisis de datos",
@@ -126,11 +137,7 @@ export function generatePersonSchema() {
       "Industria 4.0",
       "Inteligencia Artificial",
     ],
-    sameAs: [
-      `https://twitter.com/${seoConfig.twitterHandle}`,
-      "https://github.com/jhoselinquispe",
-      "https://linkedin.com/in/jhoselinquispe",
-    ],
+    sameAs,
   };
 }
 
@@ -141,6 +148,7 @@ export function generateWebsiteSchema() {
     name: seoConfig.siteName,
     url: seoConfig.siteUrl,
     description: seoConfig.defaultDescription,
+    inLanguage: seoConfig.language,
     author: {
       "@type": "Person",
       name: seoConfig.author,
