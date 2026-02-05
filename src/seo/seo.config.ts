@@ -115,9 +115,15 @@ export function generatePersonSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${seoConfig.siteUrl}/#person`,
     name: seoConfig.author,
     url: seoConfig.siteUrl,
-    image,
+    image: {
+      "@type": "ImageObject",
+      url: image,
+      width: "1200",
+      height: "630"
+    },
     jobTitle: "Estudiante de Ingeniería Industrial",
     description:
       "Estudiante de 5to semestre en la Universidad Continental - Cusco, especializada en mejora de procesos y análisis de datos",
@@ -145,14 +151,24 @@ export function generateWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${seoConfig.siteUrl}/#website`,
     name: seoConfig.siteName,
     url: seoConfig.siteUrl,
     description: seoConfig.defaultDescription,
     inLanguage: seoConfig.language,
-    author: {
+    publisher: {
       "@type": "Person",
+      "@id": `${seoConfig.siteUrl}/#person`,
       name: seoConfig.author,
     },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${seoConfig.siteUrl}/blog?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
   };
 }
 
@@ -164,23 +180,40 @@ export function generateArticleSchema(options: {
   publishedAt: string;
   modifiedAt?: string;
 }) {
+  const imageUrl = options.image?.startsWith("http")
+    ? options.image
+    : `${seoConfig.siteUrl}${options.image ?? seoConfig.defaultImage}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${options.url}#article`,
     headline: options.title,
     description: options.description,
     url: options.url,
-    image: options.image ?? seoConfig.defaultImage,
+    image: {
+      "@type": "ImageObject",
+      url: imageUrl,
+      width: "1200",
+      height: "630"
+    },
     datePublished: options.publishedAt,
     dateModified: options.modifiedAt ?? options.publishedAt,
     author: {
       "@type": "Person",
+      "@id": `${seoConfig.siteUrl}/#person`,
       name: seoConfig.author,
       url: seoConfig.siteUrl,
     },
     publisher: {
       "@type": "Person",
+      "@id": `${seoConfig.siteUrl}/#person`,
       name: seoConfig.author,
     },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": options.url
+    },
+    inLanguage: seoConfig.language,
   };
 }

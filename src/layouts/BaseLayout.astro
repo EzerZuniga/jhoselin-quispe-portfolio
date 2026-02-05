@@ -1,7 +1,13 @@
 ---
 import "@styles/tailwind.css";
 import "@styles/app.css";
-import { generatePageSeo, generatePersonSchema, generateWebsiteSchema, seoConfig } from "@seo/seo.config";
+import { 
+  generatePageSeo, 
+  generatePersonSchema, 
+  generateWebsiteSchema,
+  generateArticleSchema, 
+  seoConfig 
+} from "@seo/seo.config";
 
 interface Props {
   title?: string;
@@ -23,7 +29,19 @@ const {
 
 const seo = generatePageSeo(Astro.url.pathname, { title, description, image, type });
 const twitterSite = seoConfig.twitterHandle ? `@${seoConfig.twitterHandle}` : undefined;
-const structuredData = [generateWebsiteSchema(), generatePersonSchema()];
+const websiteSchema = generateWebsiteSchema();
+const personSchema = generatePersonSchema();
+
+// Generate article schema if it's an article
+const articleSchema = type === "article" && publishedAt 
+  ? generateArticleSchema({
+      title: seo.title,
+      description: seo.description,
+      url: seo.canonical,
+      image: seo.image,
+      publishedAt: publishedAt,
+    })
+  : null;
 ---
 
 <!doctype html>
@@ -93,9 +111,9 @@ const structuredData = [generateWebsiteSchema(), generatePersonSchema()];
     />
 
     <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-      {JSON.stringify(structuredData)}
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
     <!-- Theme initialization (prevent flash) -->
     <script is:inline>

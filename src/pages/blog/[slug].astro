@@ -37,6 +37,8 @@ const relatedPosts = allPosts
   title={post.title}
   description={post.summary}
   image={post.image}
+  type="article"
+  publishedAt={post.date.toISOString()}
 >
   <BlogPost post={post} />
 
