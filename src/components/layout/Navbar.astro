@@ -1,6 +1,5 @@
 ---
 import ThemeToggle from "@components/theme/ThemeToggle";
-import { seoConfig } from "@seo/seo.config";
 
 interface NavLink {
   label: string;
@@ -29,7 +28,12 @@ const currentPath = Astro.url.pathname;
   >
     <!-- Logo - naisser.com style -->
     <a href="/" class="group flex items-center gap-2">
-      <span class="navbar-text text-lg font-bold sm:text-xl">{seoConfig.siteName}</span>
+      <span class="navbar-text inline-flex items-center" aria-label="Jhoselin">
+        <svg class="h-8 w-auto sm:h-9" viewBox="0 0 180 36" role="img" aria-hidden="true">
+          <use href="/logo-jhoselin.svg#logo-jhoselin"></use>
+        </svg>
+        <span class="sr-only">Jhoselin</span>
+      </span>
     </a>
 
     <!-- Desktop Navigation - naisser.com style -->

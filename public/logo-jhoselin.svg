@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 36">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Display';
+        font-weight: 700;
+      }
+      .logo-text {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        fill: currentColor;
+      }
+      .decorative {
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <g id="logo-jhoselin">
+    <!-- J con serif decorativo -->
+    <path d="M2 8h8v16c0 4-2 6-6 6h-2v-3h2c2 0 2-1 2-3V11H2V8Z" fill="currentColor"/>
+
+    <!-- H -->
+    <rect x="16" y="8" width="3" height="20" fill="currentColor"/>
+    <rect x="28" y="8" width="3" height="20" fill="currentColor"/>
+    <rect x="16" y="16" width="15" height="3" fill="currentColor"/>
+
+    <!-- o decorativo -->
+    <circle cx="44" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="44" cy="20" r="2" fill="currentColor"/>
+
+    <!-- s con curva -->
+    <path d="M58 15c0-3 2-5 5-5s5 2 5 5-2 3-5 4c-3 1-5 2-5 5s2 5 5 5 5-2 5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- e -->
+    <circle cx="82" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/>
+    <line x1="76" y1="20" x2="88" y2="20" stroke="currentColor" stroke-width="3"/>
+
+    <!-- l -->
+    <rect x="96" y="8" width="3" height="20" fill="currentColor"/>
+
+    <!-- i con punto decorativo -->
+    <rect x="106" y="14" width="3" height="14" fill="currentColor"/>
+    <circle cx="107.5" cy="9" r="2" fill="currentColor"/>
+
+    <!-- n -->
+    <path d="M116 14v14M116 14c2-3 10-3 10 2v12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Estrella decorativa -->
+    <path d="M134 8l1.5 4.5h4.5l-3.5 2.5 1.5 4.5-3.5-2.5-3.5 2.5 1.5-4.5-3.5-2.5h4.5z" fill="currentColor" opacity="0.8"/>
+
+    <circle cx="145" cy="12" r="1.5" fill="currentColor" opacity="0.6"/>
+    <circle cx="150" cy="14" r="1" fill="currentColor" opacity="0.6"/>
+  </g>
+</svg>

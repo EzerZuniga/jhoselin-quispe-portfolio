@@ -26,7 +26,8 @@ const formacionAcademica = [
     periodo: "2023 - Actualidad",
     titulo: "Ingeniería Industrial",
     institucion: "Universidad Continental - Cusco",
-    descripcion: "Quinto semestre. Formación en análisis, gestión, control y optimización de procesos industriales.",
+    descripcion:
+      "Quinto semestre. Formación en análisis, gestión, control y optimización de procesos industriales.",
     estado: "En curso",
   },
 ];
@@ -36,38 +37,42 @@ const areasExpertise = [
   {
     titulo: "Mejora de Procesos",
     descripcion: "Análisis y optimización de procesos industriales usando Lean y Six Sigma",
-    icono: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
+    icono:
+      "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z",
   },
   {
     titulo: "Análisis de Datos",
     descripcion: "Interpretación y visualización de datos para toma de decisiones",
-    icono: "M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+    icono:
+      "M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125",
   },
   {
     titulo: "Industria 4.0",
     descripcion: "Aplicación de tecnologías digitales en manufactura",
-    icono: "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"
+    icono:
+      "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819",
   },
   {
     titulo: "Inteligencia Artificial",
     descripcion: "Uso de IA y Machine Learning en soluciones industriales",
-    icono: "M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+    icono:
+      "M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5",
   },
 ];
 ---
 
 <PageLayout
   title="Sobre mí"
-  description="Conoce más sobre Jhoselin Quispe Luque, estudiante de Ingeniería Industrial en la Universidad Continental - Cusco."
+  description="Conoce más sobre Jhoselin Quispe Luque, estudiante de Ingeniería Industrial en la Universidad Continental - Cusco, enfocada en mejora de procesos y análisis de datos."
 >
   <!-- Hero Section - with background image like naisser.com -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative flex min-h-screen items-center justify-center overflow-hidden">
     <!-- Background Image -->
-    <div class="absolute inset-0 w-full h-full">
+    <div class="absolute inset-0 h-full w-full">
       <img
         src="/images/profile/fondo hero.jpg"
         alt=""
-        class="w-full h-full object-cover object-center"
+        class="h-full w-full object-cover object-center"
         loading="eager"
         fetchpriority="high"
       />
@@ -75,38 +80,53 @@ const areasExpertise = [
       <div class="absolute inset-0 bg-black/30"></div>
     </div>
 
-    <div class="container-custom relative z-10 py-16 sm:py-20 text-center">
+    <div class="container-custom relative z-10 py-16 text-center sm:py-20">
       <!-- Profile Image - Circular -->
       <div class="mb-6 sm:mb-8">
-        <div class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto">
+        <div class="relative mx-auto h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-56 lg:w-56">
           <div class="absolute inset-0 rounded-full border-4 border-white/80 shadow-2xl"></div>
           <img
             src="/images/profile/foto 1.jpeg"
             alt="Jhoselin Quispe Luque"
-            class="w-full h-full object-cover object-top rounded-full"
+            class="h-full w-full rounded-full object-cover object-top"
             loading="eager"
           />
         </div>
       </div>
 
       <!-- Name -->
-      <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 px-4">
+      <h1
+        class="mb-3 px-4 text-xl font-bold text-white sm:mb-4 sm:text-2xl md:text-3xl lg:text-4xl"
+      >
         <span class="text-white/95">Estudiante Ing. </span>
         <span class="text-primary">JHOSELIN QUISPE LUQUE</span>
       </h1>
 
       <!-- Description -->
-      <p class="text-white/85 text-xs sm:text-sm md:text-base max-w-xl lg:max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed px-6 sm:px-4">
-        Soy estudiante de Ingeniería Industrial en la Universidad Continental - Cusco, actualmente en el 5to semestre. 
-        Me apasiona el análisis de procesos, la mejora continua y el uso de la tecnología para optimizar la toma de decisiones.
-        En esta web quiero compartir mis proyectos y experiencias académicas contigo.
+      <p
+        class="mx-auto mb-6 max-w-xl px-6 text-xs leading-relaxed text-white/85 sm:mb-8 sm:px-4 sm:text-sm md:text-base lg:max-w-2xl"
+      >
+        Soy estudiante de Ingeniería Industrial en la Universidad Continental - Cusco, actualmente
+        en el 5to semestre. Me apasiona el análisis de procesos, la mejora continua y el uso de la
+        tecnología para optimizar la toma de decisiones. En esta web quiero compartir mis proyectos
+        y experiencias académicas contigo.
       </p>
 
       <!-- CTA Button -->
-      <a href="#profile" class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-primary text-white rounded-full text-sm sm:text-base font-medium hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/30">
+      <a
+        href="#profile"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-primary/30 transition-all duration-200 hover:bg-primary/90 sm:px-8 sm:py-3 sm:text-base"
+      >
         Ver más
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <svg
+          class="h-4 w-4 sm:h-5 sm:w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
         </svg>
       </a>
     </div>
@@ -115,53 +135,69 @@ const areasExpertise = [
   <!-- Profile Section - naisser.com style (two columns) -->
   <section id="profile" class="section bg-white dark:bg-background">
     <div class="container-custom">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="mx-auto max-w-6xl">
+        <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <!-- Image side -->
           <div class="relative">
             <img
               src="/images/profile/foto 2.jpeg"
               alt="Jhoselin Quispe Luque"
-              class="w-full max-w-sm sm:max-w-md mx-auto lg:mx-0 rounded-xl shadow-lg object-cover"
+              class="mx-auto w-full max-w-sm rounded-xl object-cover shadow-lg sm:max-w-md lg:mx-0"
               loading="lazy"
             />
           </div>
 
           <!-- Text content -->
           <div class="space-y-3 sm:space-y-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
+            <h2
+              class="text-lg font-bold uppercase tracking-wide text-primary sm:text-xl md:text-2xl lg:text-3xl"
+            >
               JHOSELIN QUISPE LUQUE
             </h2>
-            
-            <p class="text-sm sm:text-base text-muted-foreground font-medium">
+
+            <p class="text-sm font-medium text-muted-foreground sm:text-base">
               Estudiante de Ingeniería Industrial · 5to Semestre
             </p>
 
             <div class="space-y-2 sm:space-y-3">
-              <p class="text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base italic">
-                Estudio Ingeniería Industrial en la Universidad Continental - Cusco. 
-                Me caracterizo por un enfoque reflexivo y analítico, buscando siempre comprender 
-                el "por qué" detrás de cada problema antes de plantear soluciones.
+              <p
+                class="text-xs italic leading-relaxed text-muted-foreground sm:text-sm md:text-base"
+              >
+                Estudio Ingeniería Industrial en la Universidad Continental - Cusco. Me caracterizo
+                por un enfoque reflexivo y analítico, buscando siempre comprender el "por qué"
+                detrás de cada problema antes de plantear soluciones.
               </p>
-              
-              <p class="text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base">
-                Me apasiona la mejora de procesos, el análisis de datos y la aplicación de 
-                tecnologías emergentes como la Inteligencia Artificial en contextos industriales. 
+
+              <p class="text-xs leading-relaxed text-muted-foreground sm:text-sm md:text-base">
+                Me apasiona la mejora de procesos, el análisis de datos y la aplicación de
+                tecnologías emergentes como la Inteligencia Artificial en contextos industriales.
                 Considero el aprendizaje constante como un pilar fundamental de mi desarrollo.
               </p>
-              
-              <p class="text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base">
-                He participado en diversos proyectos académicos y eventos relacionados con 
-                metodologías de calidad, gestión de operaciones y optimización. Mi objetivo es 
+
+              <p class="text-xs leading-relaxed text-muted-foreground sm:text-sm md:text-base">
+                He participado en diversos proyectos académicos y eventos relacionados con
+                metodologías de calidad, gestión de operaciones y optimización. Mi objetivo es
                 aplicar herramientas de ingeniería para resolver problemas reales en organizaciones.
               </p>
             </div>
 
             <!-- CTA Buttons -->
-            <div class="flex flex-wrap gap-2 sm:gap-3 pt-2 sm:pt-4">
-              <a href="/projects" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 bg-primary text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-primary/90 transition-all duration-200">Ver Proyectos</a>
-              <a href="/events" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 bg-primary text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-primary/90 transition-all duration-200">Ver Eventos</a>
-              <a href="/contact" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 bg-primary text-white rounded-lg text-xs sm:text-sm font-medium hover:bg-primary/90 transition-all duration-200">Contactar</a>
+            <div class="flex flex-wrap gap-2 pt-2 sm:gap-3 sm:pt-4">
+              <a
+                href="/projects"
+                class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-xs font-medium text-white transition-all duration-200 hover:bg-primary/90 sm:px-6 sm:py-2.5 sm:text-sm"
+                >Ver Proyectos</a
+              >
+              <a
+                href="/events"
+                class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-xs font-medium text-white transition-all duration-200 hover:bg-primary/90 sm:px-6 sm:py-2.5 sm:text-sm"
+                >Ver Eventos</a
+              >
+              <a
+                href="/contact"
+                class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-xs font-medium text-white transition-all duration-200 hover:bg-primary/90 sm:px-6 sm:py-2.5 sm:text-sm"
+                >Contactar</a
+              >
             </div>
           </div>
         </div>
@@ -172,18 +208,26 @@ const areasExpertise = [
   <!-- Services/Areas Section - naisser.com style cards -->
   <section class="section bg-secondary/30">
     <div class="container-custom">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        {areasExpertise.map((area) => (
-          <article class="service-card">
-            <div class="service-card-icon">
-              <svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d={area.icono} />
-              </svg>
-            </div>
-            <h3 class="service-card-title">{area.titulo}</h3>
-            <p class="service-card-description">{area.descripcion}</p>
-          </article>
-        ))}
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+        {
+          areasExpertise.map((area) => (
+            <article class="service-card">
+              <div class="service-card-icon">
+                <svg
+                  class="h-full w-full"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d={area.icono} />
+                </svg>
+              </div>
+              <h3 class="service-card-title">{area.titulo}</h3>
+              <p class="service-card-description">{area.descripcion}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -191,28 +235,30 @@ const areasExpertise = [
   <!-- Education Section -->
   <section class="section bg-background">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-8 text-center">
           <h2 class="section-title">
             <span class="text-foreground">Formación </span>
             <span class="text-primary">Académica</span>
           </h2>
         </div>
 
-        <div class="max-w-2xl mx-auto">
-          {formacionAcademica.map((item) => (
-            <div class="timeline-item">
-              <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                <span class="badge-primary text-xs">{item.periodo}</span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
-                  {item.estado}
-                </span>
+        <div class="mx-auto max-w-2xl">
+          {
+            formacionAcademica.map((item) => (
+              <div class="timeline-item">
+                <div class="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <span class="badge-primary text-xs">{item.periodo}</span>
+                  <span class="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                    {item.estado}
+                  </span>
+                </div>
+                <h3 class="mb-1 text-lg font-bold text-foreground">{item.titulo}</h3>
+                <p class="mb-2 text-sm font-medium text-primary">{item.institucion}</p>
+                <p class="text-sm leading-relaxed text-muted-foreground">{item.descripcion}</p>
               </div>
-              <h3 class="text-lg font-bold text-foreground mb-1">{item.titulo}</h3>
-              <p class="text-primary font-medium mb-2 text-sm">{item.institucion}</p>
-              <p class="text-muted-foreground leading-relaxed text-sm">{item.descripcion}</p>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </div>
@@ -221,62 +267,86 @@ const areasExpertise = [
   <!-- Skills Section -->
   <section class="section bg-secondary/30">
     <div class="container-custom">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="mb-8 text-center">
           <h2 class="section-title">
             <span class="text-foreground">Mis </span>
             <span class="text-primary">Habilidades</span>
           </h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid gap-8 md:grid-cols-2">
           <!-- Technical Skills -->
           <div class="card-professional">
-            <h3 class="text-lg font-bold text-foreground mb-5 flex items-center gap-2">
-              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <h3 class="mb-5 flex items-center gap-2 text-lg font-bold text-foreground">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                <svg
+                  class="h-5 w-5 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
                 </svg>
               </div>
               Habilidades Técnicas
             </h3>
             <div class="space-y-5">
-              {habilidadesTecnicas.map((skill) => (
-                <div>
-                  <div class="flex justify-between mb-2">
-                    <span class="text-sm font-medium text-foreground">{skill.nombre}</span>
-                    <span class="text-sm text-primary font-semibold">{skill.porcentaje}%</span>
+              {
+                habilidadesTecnicas.map((skill) => (
+                  <div>
+                    <div class="mb-2 flex justify-between">
+                      <span class="text-sm font-medium text-foreground">{skill.nombre}</span>
+                      <span class="text-sm font-semibold text-primary">{skill.porcentaje}%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill" style={`width: ${skill.porcentaje}%`} />
+                    </div>
                   </div>
-                  <div class="skill-bar">
-                    <div class="skill-bar-fill" style={`width: ${skill.porcentaje}%`}></div>
-                  </div>
-                </div>
-              ))}
+                ))
+              }
             </div>
           </div>
 
           <!-- Soft Skills -->
           <div class="card-professional">
-            <h3 class="text-lg font-bold text-foreground mb-5 flex items-center gap-2">
-              <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            <h3 class="mb-5 flex items-center gap-2 text-lg font-bold text-foreground">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                <svg
+                  class="h-5 w-5 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
                 </svg>
               </div>
               Habilidades Blandas
             </h3>
             <div class="space-y-5">
-              {habilidadesBlandas.map((skill) => (
-                <div>
-                  <div class="flex justify-between mb-2">
-                    <span class="text-sm font-medium text-foreground">{skill.nombre}</span>
-                    <span class="text-sm text-primary font-semibold">{skill.porcentaje}%</span>
+              {
+                habilidadesBlandas.map((skill) => (
+                  <div>
+                    <div class="mb-2 flex justify-between">
+                      <span class="text-sm font-medium text-foreground">{skill.nombre}</span>
+                      <span class="text-sm font-semibold text-primary">{skill.porcentaje}%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill" style={`width: ${skill.porcentaje}%`} />
+                    </div>
                   </div>
-                  <div class="skill-bar">
-                    <div class="skill-bar-fill" style={`width: ${skill.porcentaje}%`}></div>
-                  </div>
-                </div>
-              ))}
+                ))
+              }
             </div>
           </div>
         </div>
@@ -288,22 +358,33 @@ const areasExpertise = [
   <section class="section tech-pattern-bg text-white">
     <div class="hero-lines"></div>
     <div class="container-custom relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="mb-4 text-xl font-bold sm:text-2xl md:text-3xl">
           <span class="text-white">¿Quieres saber más sobre </span>
           <span class="text-primary">mis proyectos?</span>
         </h2>
-        <p class="text-white/80 text-sm sm:text-base mb-6 max-w-xl mx-auto">
-          Explora mis trabajos académicos y proyectos de mejora continua desarrollados durante mi formación.
+        <p class="mx-auto mb-6 max-w-xl text-sm text-white/80 sm:text-base">
+          Explora mis trabajos académicos y proyectos de mejora continua desarrollados durante mi
+          formación.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
           <a href="/projects" class="btn-primary">
             Ver Proyectos
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
             </svg>
           </a>
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-sm font-medium hover:bg-white hover:text-gray-900 transition-all duration-200">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-5 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-white hover:text-gray-900 sm:px-6 sm:py-2.5"
+          >
             Contactar
           </a>
         </div>
