@@ -1,12 +1,12 @@
 ---
 import "@styles/tailwind.css";
 import "@styles/app.css";
-import { 
-  generatePageSeo, 
-  generatePersonSchema, 
+import {
+  generatePageSeo,
+  generatePersonSchema,
   generateWebsiteSchema,
-  generateArticleSchema, 
-  seoConfig 
+  generateArticleSchema,
+  seoConfig,
 } from "@seo/seo.config";
 
 interface Props {
@@ -33,15 +33,16 @@ const websiteSchema = generateWebsiteSchema();
 const personSchema = generatePersonSchema();
 
 // Generate article schema if it's an article
-const articleSchema = type === "article" && publishedAt 
-  ? generateArticleSchema({
-      title: seo.title,
-      description: seo.description,
-      url: seo.canonical,
-      image: seo.image,
-      publishedAt: publishedAt,
-    })
-  : null;
+const articleSchema =
+  type === "article" && publishedAt
+    ? generateArticleSchema({
+        title: seo.title,
+        description: seo.description,
+        url: seo.canonical,
+        image: seo.image,
+        publishedAt: publishedAt,
+      })
+    : null;
 ---
 
 <!doctype html>
@@ -113,7 +114,11 @@ const articleSchema = type === "article" && publishedAt
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-    {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+    {
+      articleSchema && (
+        <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+      )
+    }
 
     <!-- Theme initialization (prevent flash) -->
     <script is:inline>

@@ -122,7 +122,7 @@ export function generatePersonSchema() {
       "@type": "ImageObject",
       url: image,
       width: "1200",
-      height: "630"
+      height: "630",
     },
     jobTitle: "Estudiante de Ingeniería Industrial",
     description:
@@ -165,10 +165,10 @@ export function generateWebsiteSchema() {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: `${seoConfig.siteUrl}/blog?q={search_term_string}`
+        urlTemplate: `${seoConfig.siteUrl}/blog?q={search_term_string}`,
       },
-      "query-input": "required name=search_term_string"
-    }
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
@@ -195,7 +195,7 @@ export function generateArticleSchema(options: {
       "@type": "ImageObject",
       url: imageUrl,
       width: "1200",
-      height: "630"
+      height: "630",
     },
     datePublished: options.publishedAt,
     dateModified: options.modifiedAt ?? options.publishedAt,
@@ -212,7 +212,7 @@ export function generateArticleSchema(options: {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": options.url
+      "@id": options.url,
     },
     inLanguage: seoConfig.language,
   };
