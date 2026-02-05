@@ -38,10 +38,7 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
     <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta
-      name="google-site-verification"
-      content="n5T9bgviyHU5mpti7fzXziBLe-kuJCsNzKmwM5xGcxg"
-    />
+    <meta name="google-site-verification" content="n5T9bgviyHU5mpti7fzXziBLe-kuJCsNzKmwM5xGcxg" />
 
     <!-- Robots -->
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -116,7 +113,10 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
       (function () {
         const stored = localStorage.getItem("theme-preference");
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = stored === "dark" || (stored === "system" && prefersDark) || (!stored && prefersDark) ? "dark" : "light";
+        const theme =
+          stored === "dark" || (stored === "system" && prefersDark) || (!stored && prefersDark)
+            ? "dark"
+            : "light";
         document.documentElement.classList.remove("light", "dark");
         document.documentElement.classList.add(theme);
       })();
@@ -125,7 +125,7 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
     <!-- Additional head content -->
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-background text-foreground font-sans antialiased">
+  <body class="min-h-screen bg-background font-sans text-foreground antialiased">
     <!-- Skip to main content link -->
     <slot name="skip" />
 
