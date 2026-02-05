@@ -121,8 +121,8 @@ export function generatePersonSchema() {
     image: {
       "@type": "ImageObject",
       url: image,
-      width: "1200",
-      height: "630",
+      width: 1200,
+      height: 630,
     },
     jobTitle: "Estudiante de Ingeniería Industrial",
     description:
@@ -194,8 +194,8 @@ export function generateArticleSchema(options: {
     image: {
       "@type": "ImageObject",
       url: imageUrl,
-      width: "1200",
-      height: "630",
+      width: 1200,
+      height: 630,
     },
     datePublished: options.publishedAt,
     dateModified: options.modifiedAt ?? options.publishedAt,
