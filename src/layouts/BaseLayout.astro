@@ -81,6 +81,36 @@ const fullTitle = title === seoConfig.defaultTitle ? title : `${title} | ${seoCo
       rel="stylesheet"
     />
 
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jhoselin Quispe Luque",
+        "url": "https://jhoselin-quispe-luque.netlify.app",
+        "image": "https://jhoselin-quispe-luque.netlify.app/images/profile/fondo.avif",
+        "jobTitle": "Estudiante de Ingeniería Industrial",
+        "worksFor": {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Continental Cusco"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Continental Cusco"
+        },
+        "knowsAbout": [
+          "Ingeniería Industrial",
+          "Mejora de Procesos",
+          "Análisis de Datos",
+          "Gestión de Calidad",
+          "Lean Manufacturing",
+          "Six Sigma",
+          "Industria 4.0"
+        ],
+        "description": "Estudiante de Ingeniería Industrial en la Universidad Continental - Cusco. Especializada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0."
+      }
+    </script>
+
     <!-- Theme initialization (prevent flash) -->
     <script is:inline>
       (function () {
