@@ -26,9 +26,9 @@ export interface SeoConfig {
 
 export const seoConfig: SeoConfig = {
   siteName: "Jhoselin Quispe Luque",
-  defaultTitle: "Jhoselin Quispe Luque · Ingeniería Industrial | Portfolio Académico",
+  defaultTitle: "Jhoselin Quispe Luque | Portafolio Académico",
   defaultDescription:
-    "Portfolio académico de Jhoselin Quispe Luque. Estudiante de Ingeniería Industrial en la Universidad Continental - Cusco (5to semestre). Especializada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0.",
+    "Portafolio académico de Jhoselin Quispe Luque, estudiante de Ingeniería Industrial en la Universidad Continental - Cusco, enfocada en mejora de procesos, análisis de datos, gestión de calidad e Industria 4.0.",
   siteUrl: "https://jhoselin-quispe-luque.netlify.app",
   defaultImage: "/images/og-image.jpg",
   twitterHandle: "jhoselinquispe",
